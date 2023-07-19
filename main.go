@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"practice-go-examples/examples/concurrency/waitgroups"
+	"practice-go-examples/examples/concurrency/channels"
 	"practice-go-examples/examples/embedding/guards"
 	"practice-go-examples/examples/embedding/logger"
 	"practice-go-examples/examples/interfaces/paymentprocessor"
@@ -22,7 +22,7 @@ func SitesAvailabilityCheckExample() {
 		"https://wizzair.com/",
 		"https://www.swiss.com/",
 	}
-	waitgroups.SitesAvailabilityCheck(urls)
+	channels.SitesAvailabilityCheck(urls)
 }
 
 func embeddedLoggerExample() {
