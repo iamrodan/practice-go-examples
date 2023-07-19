@@ -1,3 +1,3 @@
 ### TODO
-- [ ] Go Concurrency
-- [ ] Go Channels
+- [x] Go Concurrency
+- [x] Go Channels
