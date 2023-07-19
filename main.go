@@ -2,14 +2,27 @@ package main
 
 import (
 	"fmt"
+	"practice-go-examples/examples/concurrency/waitgroups"
 	"practice-go-examples/examples/embedding/guards"
 	"practice-go-examples/examples/embedding/logger"
 	"practice-go-examples/examples/interfaces/paymentprocessor"
 )
 
 func main() {
+	SitesAvailabilityCheckExample()
 	// paymentProcessorExampleWithInterfaces()
-	embeddedLoggerExample()
+	// embeddedLoggerExample()
+}
+
+func SitesAvailabilityCheckExample() {
+	urls := []string{
+		"https://www.easyjet.com/",
+		"https://www.skyscanner.de/",
+		"https://www.ryanair.com",
+		"https://wizzair.com/",
+		"https://www.swiss.com/",
+	}
+	waitgroups.SitesAvailabilityCheck(urls)
 }
 
 func embeddedLoggerExample() {
