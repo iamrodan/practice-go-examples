@@ -6,12 +6,23 @@ import (
 	"practice-go-examples/examples/embedding/guards"
 	"practice-go-examples/examples/embedding/logger"
 	"practice-go-examples/examples/interfaces/paymentprocessor"
+	"practice-go-examples/examples/panic"
 )
 
 func main() {
-	SitesAvailabilityCheckExample()
+	// SitesAvailabilityCheckExample()
 	// paymentProcessorExampleWithInterfaces()
 	// embeddedLoggerExample()
+	runGoPanicExample()
+}
+
+func runGoPanicExample() {
+	result_channel := make(chan int)
+	msg_channel := make(chan string)
+	go panic.Sum(5, -10, result_channel)
+	go panic.SayHelloMsg(msg_channel)
+	fmt.Printf("sayHelloMsg output: %v", <-msg_channel)
+	fmt.Printf("Sum of %v + %v is %v\n", 5, 10, <-result_channel)
 }
 
 func SitesAvailabilityCheckExample() {
